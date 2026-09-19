@@ -1,47 +1,45 @@
 # Omar Martinez — Portfolio
 
-Static personal portfolio for [omar-martinez-dev.github.io](https://omar-martinez-dev.github.io), hosted with GitHub Pages.
+Static engineering portfolio for https://omar-martinez-dev.github.io. No build step or JavaScript dependencies are required.
 
-## Purpose
+## Selected work
 
-This site presents product work through engineering decisions and user outcomes rather than a list of technologies. Ostinova is the lead case study because it demonstrates end-to-end ownership: product framing, SwiftUI implementation, local-first data, audio behavior, privacy-aware advertising, testing, and release preparation.
+- **Ostinova:** lead product case study, using the public `ostinova-showcase` documentation and existing portfolio screenshots. Clearly labeled in development.
+- **Music Player:** public native iOS project demonstrating persistence, local audio, system media integration, and concurrency.
+- **Audiology Externship:** React/Firebase senior capstone, explicitly credited to the eight-person Code Enjoyers team. Descriptions describe team capabilities rather than claiming individual ownership.
+- **Martinez Studio:** supporting link to the product catalog.
 
-## Design and engineering decisions
+Content is based on public project READMEs. Private repository content is not published.
 
-- **Editorial product story:** a restrained dark layout keeps the app imagery and case-study narrative primary.
-- **Static by design:** semantic HTML, CSS, and a small amount of JavaScript keep deployment simple, reduce runtime dependencies, and make the site inexpensive to host.
-- **Responsive composition:** fluid type, grid breakpoints, and bounded media layouts support compact phones through large desktop displays without maintaining separate pages.
-- **Progressive enhancement:** core navigation and content work without JavaScript; JavaScript adds reveal motion and lightweight interaction.
-- **Accessibility:** visible focus states, descriptive alternative text, semantic landmarks, and reduced-motion support are built in.
-- **Performance:** optimized screenshots, no framework bundle, and no third-party trackers keep the initial experience lightweight.
+## Design
 
-## Structure
+Warm paper, charcoal typography, muted project colors, and orange accents. Large product imagery is paired with a short problem statement, engineering focus, technologies, and a direct source/case-study link.
 
-```text
-.
-├── assets/       # Optimized product imagery
-├── index.html    # Portfolio content and semantic structure
-├── styles.css    # Tokens, layout, responsive rules, and motion
-├── script.js     # Progressive interaction and reveal behavior
-├── 404.html      # Branded fallback page
-└── .nojekyll     # Serve the static files directly on GitHub Pages
-```
+Mobbin MCP reference: [Unseen Studio selected projects](https://mobbin.com/sites/sections/79d328bc-800b-4830-9de1-7ef8fd2dd00f). The reference informed the image-led project hierarchy and restrained navigation; no reference-site assets are embedded.
+
+Project imagery comes from the existing portfolio, `omar-martinez-dev/MusicPlayerApp/docs/screenshots`, and `austindusa/Code-Enjoyers-Senior-Project/src/images/HomePage.JPG`.
 
 ## Local preview
 
-```sh
-python3 -m http.server 4173
-```
+Run `python -m http.server 4173` and open http://localhost:4173.
 
-Open `http://localhost:4173`.
+## Structure
+
+- `index.html`: semantic content, project links, and metadata
+- `styles.css`: design tokens and desktop/mobile layouts
+- `script.js`: progressive copyright-year enhancement
+- `assets/`: local project screenshots and app icon
+- `404.html`: fallback page
+
+Content and navigation work without JavaScript. The page includes a keyboard skip link, visible focus outlines, descriptive image alternatives, reduced-motion support, and lazy loading for secondary screenshots. Google Fonts supplies DM Sans and Manrope with local fallback fonts.
+
+## Validation
+
+- Browser inspection at 1440px and 390px; no horizontal document overflow.
+- All six local images loaded and all fragment links resolved.
+- Project navigation and selected-work anchor checked in browser.
+- `node --check script.js` and `git diff --check`.
 
 ## Publishing
 
-GitHub Pages publishes from the `main` branch root. The `.nojekyll` file ensures the static files are served directly.
-
-## Product principles demonstrated
-
-- Begin with the interruption in the user's workflow.
-- Treat privacy, accessibility, and error states as product behavior.
-- Prefer maintainable systems over unnecessary abstractions.
-- Validate on real device constraints, not only an ideal canvas.
+GitHub Pages publishes the main branch root. Work on `redesign` is a reviewable branch; merging into main is the release step.
