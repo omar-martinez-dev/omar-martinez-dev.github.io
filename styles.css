@@ -157,8 +157,7 @@ h1 {
   height:555px;
   border-radius:0}
 .ostinova-art {
-  --art-background:#dce3cc;
-  background:var(--art-background)}
+  background:#dce3cc}
 .art-label {
   position:absolute;
   z-index:2;
@@ -204,11 +203,6 @@ h1 {
   transform:translateY(-26px)}
 .art-foot {
   position:absolute;
-  z-index:3;
-  background:var(--art-background);
-  box-shadow:0 0 0 6px var(--art-background);
-  border-radius:2px;
-  max-width:calc(100% - 60px);
   bottom:22px;
   left:30px}
 .ostinova-art .art-foot {
@@ -304,8 +298,7 @@ h1 {
 .music-phones .phone+img {
   transform:translateY(40px)}
 .audiology-art {
-  --art-background:#e8c9ac;
-  background:var(--art-background)}
+  background:#e8c9ac}
 .audiology-art .art-label {
   justify-content:space-between}
 .browser-frame {
